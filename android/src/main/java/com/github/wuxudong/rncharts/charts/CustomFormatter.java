@@ -8,13 +8,16 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class CustomFormatter extends ValueFormatter {
 
     private DecimalFormat mFormat;
 
     public CustomFormatter(String value) {
-        mFormat = new DecimalFormat(value);
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.FRANCE);
+        mFormat = new DecimalFormat(value, symbols);
     }
 
     @Override

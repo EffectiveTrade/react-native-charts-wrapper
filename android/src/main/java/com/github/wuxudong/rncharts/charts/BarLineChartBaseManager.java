@@ -289,6 +289,8 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
                 "highlights", HIGHLIGHTS,
                 "setDataAndLockIndex", SET_DATA_AND_LOCK_INDEX);
 
+        map.put("invalidate", INVALIDATE);
+
         if (commandsMap != null) {
             map.putAll(commandsMap);
         }
@@ -328,6 +330,10 @@ public abstract class BarLineChartBaseManager<T extends BarLineChartBase, U exte
 
             case SET_DATA_AND_LOCK_INDEX:
                 setDataAndLockIndex(root, args.getMap(0));
+                return;
+
+            case INVALIDATE:
+                root.postInvalidate();
                 return;
         }
 

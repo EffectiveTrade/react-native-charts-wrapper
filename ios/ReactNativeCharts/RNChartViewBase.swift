@@ -423,6 +423,8 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
               customFormatter.positiveFormat = valueFormatter.stringValue
               customFormatter.negativeFormat = valueFormatter.stringValue
 
+              customFormatter.locale = Locale(identifier: "fr_FR")
+
               axis.valueFormatter = DefaultAxisValueFormatter(formatter: customFormatter);
           }
         }

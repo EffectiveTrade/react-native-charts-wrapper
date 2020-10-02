@@ -23,7 +23,8 @@
     "ios",
     "lib",
     "index.js",
-    "RNCharts.podspec"
+    "RNCharts.podspec",
+    "index.d.ts"
   ],
   "dependencies": {
     "prop-types": "15.7.2",
