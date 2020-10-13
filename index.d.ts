@@ -170,6 +170,7 @@ declare module 'react-native-charts-wrapper' {
         marker?: {
             enabled?: boolean;
             digits?: number;
+            markerType: 'circle' | 'custom';
             markerColor?: number;
             textColor?: number;
             textSize?: number;
@@ -306,6 +307,19 @@ declare module 'react-native-charts-wrapper' {
         x: number;
         y: number;
         marker?: string;
+        /* Следующие параметры используются только при "custom" markerType */
+
+        /* Отдельные span-элементы текста, которым можно задать собственные стили, используются вместо marker для "custom" markerType.
+         * Для переноса строки используется символ переноса - \n */
+        markerTextSpans?: string[];
+        markerColor?: number;
+        // Маркер в форме флага
+        isFlagTypeMarker?: boolean;
+        /* Каждый элемент массива применяется к своему абзацу */
+        markerTextColors?: number[];
+        markerTextSizes?: number[];
+        markerTextFontFamilies?: string[];
+        disableShadow?: boolean;
     }
 
     export interface ILineDataSet {

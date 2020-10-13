@@ -461,6 +461,11 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
             chart.marker = marker
             marker.chartView = chart
 
+        case "custom":
+            let marker = CustomMarker(viewPortHandler: chart.viewPortHandler)
+            chart.marker = marker
+            marker.chartView = chart
+
         default:
             let marker = BalloonMarker(
                 color: RCTConvert.uiColor(json["markerColor"].intValue),

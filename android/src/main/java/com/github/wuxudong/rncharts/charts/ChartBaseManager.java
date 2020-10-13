@@ -28,6 +28,7 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.wuxudong.rncharts.data.DataExtract;
 import com.github.wuxudong.rncharts.markers.RNRectangleMarkerView;
 import com.github.wuxudong.rncharts.markers.RNCircleMarkerView;
+import com.github.wuxudong.rncharts.markers.RNCustomMarkerView;
 import com.github.wuxudong.rncharts.utils.BridgeUtils;
 import com.github.wuxudong.rncharts.utils.EasingFunctionHelper;
 import com.github.wuxudong.rncharts.utils.TypefaceUtils;
@@ -281,6 +282,11 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
                 markerView = circleMarker(chart);
 
                 break;
+            case "custom":
+                markerView = customMarker(chart);
+                chart.setHardwareAccelerationEnabled(true);
+
+                break;
             default:
                 markerView = rectangleMarker(chart, propMap);
         }
@@ -297,6 +303,10 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
 
     private RNCircleMarkerView circleMarker(Chart chart) {
         return new RNCircleMarkerView(chart.getContext());
+    }
+
+    private RNCustomMarkerView customMarker(Chart chart) {
+        return new RNCustomMarkerView(chart.getContext(), chart.getViewPortHandler());
     }
 
     private void setMarkerParams(RNRectangleMarkerView marker, ReadableMap propMap) {
