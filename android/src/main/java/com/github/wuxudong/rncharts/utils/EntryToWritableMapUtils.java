@@ -10,6 +10,7 @@ import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.data.RadarEntry;
+import com.github.mikephil.charting.highlight.Highlight;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,7 +23,7 @@ import java.util.Map;
  * Helper utilities to convert from Entry to WritableMap
  */
 public final class EntryToWritableMapUtils {
-    public static WritableMap convertEntryToWritableMap(Entry entry) {
+    public static WritableMap convertEntryToWritableMap(Entry entry, Highlight highlight) {
         if(entry == null) {
             return null;
         }
@@ -53,13 +54,16 @@ public final class EntryToWritableMapUtils {
 
             map.putDouble("x", entry.getX());
             map.putDouble("y", entry.getY());
+            map.putDouble("locationX", highlight.getXPx());
+            map.putDouble("locationY", highlight.getYPx());
 
             map.putDouble("size", bubbleEntry.getSize());
         } else if (entry instanceof CandleEntry) {
             CandleEntry candleEntry = (CandleEntry) entry;
 
             map.putDouble("x", entry.getX());
-
+            map.putDouble("locationX", highlight.getXPx());
+            map.putDouble("locationY", highlight.getYPx());
             map.putDouble("open", candleEntry.getOpen());
             map.putDouble("close", candleEntry.getClose());
             map.putDouble("low", candleEntry.getLow());
@@ -76,7 +80,8 @@ public final class EntryToWritableMapUtils {
         } else {
             map.putDouble("x", entry.getX());
             map.putDouble("y", entry.getY());
-
+            map.putDouble("locationX", highlight.getXPx());
+            map.putDouble("locationY", highlight.getYPx());
         }
 
         return map;

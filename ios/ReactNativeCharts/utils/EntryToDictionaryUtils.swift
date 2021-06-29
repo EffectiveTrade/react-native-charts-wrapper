@@ -11,7 +11,7 @@ import Charts
 import SwiftyJSON
 
 class EntryToDictionaryUtils: NSObject {
-  static func entryToDictionary(_ entry: ChartDataEntry) -> [AnyHashable: Any]{
+  static func entryToDictionary(_ entry: ChartDataEntry, highlight: Highlight) -> [AnyHashable: Any]{
     var dict = [AnyHashable: Any]()
     
     if entry.data != nil {
@@ -34,11 +34,15 @@ class EntryToDictionaryUtils: NSObject {
         
         dict["x"] = bubbleEntry.x
         dict["y"] = bubbleEntry.y
+
+        dict["locationX"] = highlight.xPx
+        dict["locationY"] = highlight.yPx
         
         dict["size"] = bubbleEntry.size
     } else if entry is CandleChartDataEntry {
         let candleEntry = entry as! CandleChartDataEntry;
-        
+        dict["locationX"] = highlight.xPx
+        dict["locationY"] = highlight.yPx
         dict["x"] = candleEntry.x
         dict["open"] = candleEntry.open
         dict["close"] = candleEntry.close
@@ -59,6 +63,8 @@ class EntryToDictionaryUtils: NSObject {
     } else {
         dict["x"] = entry.x
         dict["y"] = entry.y
+        dict["locationX"] = highlight.xPx
+        dict["locationY"] = highlight.yPx
     }
     
     return dict
