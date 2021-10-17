@@ -93,6 +93,11 @@ declare module 'react-native-charts-wrapper' {
         labelCount?: number;
         labelCountForce?: boolean;
 
+        labelBgEnabled?: boolean;
+        labelBgColor?: number;
+        labelPadding?: number;
+        labelRadius?: number;
+
         /** Centers the axis labels instead of drawing them at their original position. This is useful especially for grouped BarChart. */
         centerAxisLabels?: boolean;
 

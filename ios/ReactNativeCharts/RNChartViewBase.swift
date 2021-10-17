@@ -399,6 +399,22 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
             axis.setLabelCount(config["labelCount"].intValue, force: labelCountForce)
         }
 
+        if config["labelBgEnabled"].bool != nil {
+            axis.labelBgEnabled = config["labelBgEnabled"].boolValue
+        }
+
+        if config["labelPadding"].float != nil {
+            axis.labelPadding = CGFloat(config["labelPadding"].floatValue)
+        }
+
+        if config["labelRadius"].float != nil {
+            axis.labelRadius = CGFloat(config["labelRadius"].floatValue)
+        }
+
+        if config["labelBgColor"].int != nil {
+            axis.labelBgColor = RCTConvert.uiColor(config["labelBgColor"].intValue)
+        }
+
         // formatting
         // TODO: other formatting options
         let valueFormatter = config["valueFormatter"];

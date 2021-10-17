@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/wuxudong/react-native-charts-wrapper.git"
   },
-  "version": "0.5.8",
+  "version": "0.5.9-investwl",
   "description": "A react-native charts support both android and iOS.",
   "author": "wuxudong",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "android",
     "ios",
     "lib",
+    "private",
     "index.js",
     "RNCharts.podspec",
     "index.d.ts"

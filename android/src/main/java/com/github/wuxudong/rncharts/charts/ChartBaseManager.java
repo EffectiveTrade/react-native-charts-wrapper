@@ -483,6 +483,22 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
             axis.setLabelCount(propMap.getInt("labelCount"), labelCountForce);
         }
 
+        if (BridgeUtils.validate(propMap, ReadableType.Boolean, "labelBgEnabled")) {
+          axis.setLabelBgEnabled(propMap.getBoolean("labelBgEnabled"));
+        }
+
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "labelBgColor")) {
+          axis.setLabelBgColor(propMap.getInt("labelBgColor"));
+        }
+
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "labelPadding")) {
+          axis.setLabelPadding((float) propMap.getDouble("labelPadding"));
+        }
+
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "labelRadius")) {
+          axis.setLabelRadius((float) propMap.getDouble("labelRadius"));
+        }
+
         // formatting
         if (BridgeUtils.validate(propMap, ReadableType.String, "valueFormatter")) {
             String valueFormatter = propMap.getString("valueFormatter");
