@@ -22,7 +22,7 @@
     "android",
     "ios",
     "lib",
-    "private",
+    "node_modules.private",
     "index.js",
     "RNCharts.podspec",
     "index.d.ts"
