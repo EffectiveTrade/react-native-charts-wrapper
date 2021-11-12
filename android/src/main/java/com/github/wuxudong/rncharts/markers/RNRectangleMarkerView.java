@@ -31,6 +31,7 @@ public class RNRectangleMarkerView extends MarkerView {
     private Drawable backgroundTopRight = ResourcesCompat.getDrawable(getResources(), R.drawable.rectangle_marker_top_right, null);
 
     private int digits = 0;
+    private double longPressDelay = 0.5;
 
     public RNRectangleMarkerView(Context context) {
         super(context, R.layout.rectangle_marker);
@@ -40,6 +41,14 @@ public class RNRectangleMarkerView extends MarkerView {
 
     public void setDigits(int digits) {
         this.digits = digits;
+    }
+
+    public void setLongPressDelay(double longPressDelay) {
+        this.longPressDelay = longPressDelay;
+    }
+
+    public double getLongPressDelay() {
+        return this.longPressDelay;
     }
 
     @Override

@@ -174,6 +174,7 @@ declare module 'react-native-charts-wrapper' {
 
         marker?: {
             enabled?: boolean;
+            longPressDelay?: number; // only ios
             digits?: number;
             markerType: 'circle' | 'custom';
             markerColor?: number;

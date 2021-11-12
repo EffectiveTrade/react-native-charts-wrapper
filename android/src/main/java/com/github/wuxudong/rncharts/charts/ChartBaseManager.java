@@ -329,6 +329,10 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
             marker.getTvContent().setTextSize(propMap.getInt("textSize"));
         }
 
+        if (BridgeUtils.validate(propMap, ReadableType.Number, "longPressDelay")) {
+            marker.setLongPressDelay((float) propMap.getDouble("longPressDelay"));
+        }
+
         if (BridgeUtils.validate(propMap, ReadableType.String, "textAlign")) {
 
             int alignment = View.TEXT_ALIGNMENT_CENTER;

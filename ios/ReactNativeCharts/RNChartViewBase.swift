@@ -453,6 +453,10 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
     func setMarker(_ config: NSDictionary) {
         let json = BridgeUtils.toJson(config)
 
+        if json["longPressDelay"].float != nil {
+            chart.longPressRecognizer?.minimumPressDuration = Double(json["longPressDelay"].floatValue)
+        }
+
         if json["enabled"].exists() && !json["enabled"].boolValue {
             chart.marker = nil
             return
