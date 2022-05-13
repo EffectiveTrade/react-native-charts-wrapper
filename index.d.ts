@@ -78,9 +78,13 @@ declare module 'react-native-charts-wrapper' {
             lineWidth?: number;
             valueTextColor?: number;
             valueFont?: number;
-            labelPosition?: 'LEFT_TOP' | 'LEFT_BOTTOM' | 'RIGHT_TOP' | 'RIGHT_BOTTOM';
+            labelPosition?: 'LEFT_TOP' | 'LEFT_BOTTOM' | 'RIGHT_TOP' | 'RIGHT_BOTTOM' | 'AXIS';
             lineDashPhase?: number;
             lineDashLengths?: number[];
+            labelBgEnabled?: boolean;
+            labelBgColor?: number;
+            labelPadding?: number;
+            labelRadius?: number;
         }>;
 
         drawLimitLinesBehindData?: boolean;

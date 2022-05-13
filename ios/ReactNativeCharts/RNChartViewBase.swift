@@ -362,8 +362,25 @@ open class RNChartViewBase: UIView, ChartViewDelegate {
                     if limitLineConfig["lineDashPhase"].float != nil {
                         limitLine.lineDashPhase = CGFloat(limitLineConfig["lineDashPhase"].floatValue);
                     }
+                    
                     if limitLineConfig["lineDashLengths"].arrayObject != nil {
                         limitLine.lineDashLengths = limitLineConfig["lineDashLengths"].arrayObject as? [CGFloat];
+                    }
+
+                    if limitLineConfig["labelBgEnabled"].bool != nil {
+                        limitLine.labelBgEnabled = limitLineConfig["labelBgEnabled"].boolValue
+                    }
+
+                    if limitLineConfig["labelPadding"].float != nil {
+                        limitLine.labelPadding = CGFloat(limitLineConfig["labelPadding"].floatValue)
+                    }
+
+                    if limitLineConfig["labelRadius"].float != nil {
+                        limitLine.labelRadius = CGFloat(limitLineConfig["labelRadius"].floatValue)
+                    }
+
+                    if limitLineConfig["labelBgColor"].int != nil {
+                        limitLine.labelBgColor = RCTConvert.uiColor(limitLineConfig["labelBgColor"].intValue)
                     }
 
                     axis.addLimitLine(limitLine)

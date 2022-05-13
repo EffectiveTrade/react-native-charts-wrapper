@@ -310,6 +310,8 @@ class BridgeUtils {
             return .topRight
         case "leftTop":
             return .topLeft
+        case "axis":
+            return .axis
         default:
             return .topRight
         }

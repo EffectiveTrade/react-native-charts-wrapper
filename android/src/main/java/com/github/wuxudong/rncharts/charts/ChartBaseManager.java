@@ -457,6 +457,18 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
                             limitLine.enableDashedLine(lineLength, spaceLength, lineDashPhase);
                         }
                     }
+                    if (BridgeUtils.validate(limitLineMap, ReadableType.Boolean, "labelBgEnabled")) {
+                        limitLine.setLabelBgEnabled(limitLineMap.getBoolean("labelBgEnabled"));
+                    }
+                    if (BridgeUtils.validate(limitLineMap, ReadableType.Number, "labelBgColor")) {
+                        limitLine.setLabelBgColor(limitLineMap.getInt("labelBgColor"));
+                    }
+                    if (BridgeUtils.validate(limitLineMap, ReadableType.Number, "labelPadding")) {
+                        limitLine.setLabelPadding((float) limitLineMap.getDouble("labelPadding"));
+                    }
+                    if (BridgeUtils.validate(limitLineMap, ReadableType.Number, "labelRadius")) {
+                        limitLine.setLabelRadius((float) limitLineMap.getDouble("labelRadius"));
+                    }
 
                     axis.addLimitLine(limitLine);
                 }
